@@ -1,69 +1,78 @@
-const grid = document.getElementById("grid");
+const kitsGrid = document.getElementById("kitsGrid");
+const itensGrid = document.getElementById("itensGrid");
+const servicosGrid = document.getElementById("servicosGrid");
 
-// ===== RENDER PRODUTOS =====
-function renderProdutos(lista) {
-    grid.innerHTML = "";
+// CRIAR CARD
+function criarCard(item) {
+    return `
+        ${item.badge ? `<div class="badge ${item.tipo || ""}">${item.badge}</div>` : ""}
 
-    lista.forEach(item => {
+        <div class="product-image" style="background-image:url('${item.imagem}')"></div>
+
+        <h3>${item.nome}</h3>
+        <p class="description">${item.desc}</p>
+
+        <div class="price-section">
+            <div class="price">R$ ${item.preco.toFixed(2)}</div>
+            ${item.precoOriginal ? `<div class="original-price">R$ ${item.precoOriginal.toFixed(2)}</div>` : ""}
+        </div>
+
+        <button class="buy-btn" onclick="comprar()">Adicionar ao Carrinho</button>
+
+        <div class="info">${item.info || ""}</div>
+    `;
+}
+
+// RENDER SEPARADO
+function renderProdutos() {
+    kitsGrid.innerHTML = "";
+    itensGrid.innerHTML = "";
+    servicosGrid.innerHTML = "";
+
+    produtos.forEach(item => {
         const div = document.createElement("div");
         div.className = "card";
+        div.innerHTML = criarCard(item);
 
-        div.innerHTML = `
-            ${item.badge ? `<div class="badge ${item.tipo || ""}">${item.badge}</div>` : ""}
-
-            <div class="product-image" style="background-image:url('${item.imagem}')"></div>
-
-            <h3>${item.nome}</h3>
-            <p class="description">${item.desc}</p>
-
-            <div class="price-section">
-                <div class="price">R$ ${item.preco.toFixed(2)}</div>
-                ${item.precoOriginal ? `<div class="original-price">R$ ${item.precoOriginal.toFixed(2)}</div>` : ""}
-            </div>
-
-            <button class="buy-btn" onclick="comprar()">Adicionar ao Carrinho</button>
-
-            <div class="info">${item.info || ""}</div>
-        `;
-
-        grid.appendChild(div);
+        if (item.categoria === "kits") {
+            kitsGrid.appendChild(div);
+        }
+        else if (item.categoria === "itens") {
+            itensGrid.appendChild(div);
+        }
+        else if (item.categoria === "servicos") {
+            servicosGrid.appendChild(div);
+        }
     });
 }
 
-// ===== BUSCA (FUNCIONANDO AGORA) =====
+// BUSCA GLOBAL
 document.getElementById("search").addEventListener("input", (e) => {
-    const valor = e.target.value.toLowerCase();
+    const v = e.target.value.toLowerCase();
 
     const filtrados = produtos.filter(p =>
-        p.nome.toLowerCase().includes(valor)
+        p.nome.toLowerCase().includes(v)
     );
 
-    renderProdutos(filtrados);
-});
+    kitsGrid.innerHTML = "";
+    itensGrid.innerHTML = "";
+    servicosGrid.innerHTML = "";
 
-// ===== CATEGORIAS =====
-document.querySelectorAll(".category-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
+    filtrados.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "card";
+        div.innerHTML = criarCard(item);
 
-        document.querySelectorAll(".category-btn")
-            .forEach(b => b.classList.remove("active"));
-
-        btn.classList.add("active");
-
-        const cat = btn.dataset.category;
-
-        if (cat === "all") {
-            renderProdutos(produtos);
-        } else {
-            renderProdutos(produtos.filter(p => p.categoria === cat));
-        }
+        if (item.categoria === "kits") kitsGrid.appendChild(div);
+        if (item.categoria === "itens") itensGrid.appendChild(div);
+        if (item.categoria === "servicos") servicosGrid.appendChild(div);
     });
 });
 
-// ===== COMPRA =====
+// INIT
+renderProdutos();
+
+// COMPRA
 function comprar() {
     window.location.href = "https://wa.me/SEUNUMERO";
 }
-
-// ===== INICIAR =====
-renderProdutos(produtos);
