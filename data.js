@@ -2,15 +2,17 @@ const produtos = [
 
 /* ========= KITS ========= */
 {
-    nome: "Kit Premium Completo",
+    nome: "SET GILGAMESH",
     categoria: "kits",
-    preco: 89.90,
-    precoOriginal: 179.90,
-    desc: "5 itens exclusivos + vantagens VIP",
-    badge: "🔥 Mais Vendido",
+    preco: 0,
+    precoOriginal: 19.90,
+    desc: "[🟡] GILGAMESH SET + BABYLON KEY
+[Necessário Ter o Título Golden King/Rei Dourado e Raça Servant Para Craftar a Babylon Key]
+- 3 Phantasm Core / 8 Golden Essence / 6 Ancient Shard / 12 Throne Remnant / 100 Broken Sword",
+    badge: "🔥 Mais Adiquirido",
     tipo: "",
-    info: "⭐ 50% OFF + brinde exclusivo",
-    imagem: "img/kit1.png"
+    info: "⭐ 100% OFF + brinde exclusivo",
+    imagem: "https://cdn.centralcart.io/stores/7510/packages/0cb5e97e-87b1-4a6f-9aa7-d8f9f6f957d4.png"
 },
 {
     nome: "Kit XP Boost",
