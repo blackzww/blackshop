@@ -448,6 +448,28 @@ h3 {
     font-size: 20px;
 }
 
+.card {
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(255, 102, 0, 0.15), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.card:hover::after {
+    opacity: 1;
+}
+
 /* Efeito de loading nos botões quando clicados */
 .buy-btn:active {
     transform: scale(0.95);
