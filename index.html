@@ -3,62 +3,198 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BLACKZW Store</title>
+<title>BLACKZW Store - Produtos Premium</title>
 
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-    <h2>🛒 BLACKZW</h2>
-
-    <input type="text" id="search" placeholder="Buscar produtos...">
-
-    <div class="nav-links">
-        <a href="#">Início</a>
-        <a href="#">Loja</a>
-        <a href="#">Suporte</a>
-    </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-    <h1>A melhor loja digital 🔥</h1>
-    <p>Itens exclusivos, entrega rápida e preço baixo</p>
-    <button onclick="document.getElementById('grid').scrollIntoView({behavior:'smooth'})">
-        Ver Produtos
-    </button>
-</section>
-
-<!-- DESTAQUE -->
-<section class="destaque">
-    <h2>🔥 Mais vendidos</h2>
-
-    <div class="highlight-grid">
-        <div class="card">
-            <h3>VIP Premium</h3>
-            <p>O mais comprado 💎</p>
+<header class="top">
+    <div class="header-container">
+        <div class="logo">
+            <h1>⚡ BLACKZW STORE</h1>
+            <span class="tagline">Produtos Premium</span>
         </div>
-
-        <div class="card">
-            <h3>Boost XP</h3>
-            <p>Suba de nível rápido 🚀</p>
+        
+        <div class="search-area">
+            <input type="text" id="search" placeholder="Buscar produtos...">
+            <button class="search-btn" onclick="buscarProdutos()">🔍</button>
+        </div>
+        
+        <div class="header-actions">
+            <div class="cart-icon" id="cartIcon">
+                🛒
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+            <div class="user-icon">👤</div>
         </div>
     </div>
-</section>
+</header>
 
-<!-- PRODUTOS -->
-<section class="produtos">
-    <h2>🛍️ Produtos</h2>
-    <div class="grid" id="grid"></div>
-</section>
+<main class="grid" id="grid">
 
-<!-- FOOTER -->
-<footer>
-    <p>© 2026 BLACKZW Store - Todos os direitos reservados</p>
-</footer>
+<!-- ITEM 1 - VIP Premium -->
+<div class="card" data-name="vip premium" data-price="9.90">
+    <div class="badge">🔥 Popular</div>
+    
+    <div class="product-image">
+        <div class="image-placeholder">👑</div>
+    </div>
+    
+    <h3>VIP Premium</h3>
+    <p class="description">Acesso exclusivo e vantagens únicas</p>
+    
+    <div class="price-section">
+        <div class="price">R$ 9,90</div>
+        <div class="original-price">R$ 19,90</div>
+    </div>
+    
+    <div class="payment-info">em até 2x sem juros</div>
+    
+    <button class="buy-btn" onclick="comprar(this)">Adicionar ao Carrinho</button>
+    
+    <div class="info">✅ Entrega imediata</div>
+</div>
+
+<!-- ITEM 2 - Boost XP -->
+<div class="card" data-name="boost xp" data-price="4.90">
+    <div class="badge new">🆕 Novo</div>
+    
+    <div class="product-image">
+        <div class="image-placeholder">⚡</div>
+    </div>
+    
+    <h3>Boost XP</h3>
+    <p class="description">Ganhe XP muito mais rápido</p>
+    
+    <div class="price-section">
+        <div class="price">R$ 4,90</div>
+        <div class="original-price">R$ 9,90</div>
+    </div>
+    
+    <div class="payment-info">em até 1x sem juros</div>
+    
+    <button class="buy-btn" onclick="comprar(this)">Adicionar ao Carrinho</button>
+    
+    <div class="info">⏰ Duração 24h</div>
+</div>
+
+<!-- ITEM 3 - Item Raro -->
+<div class="card" data-name="item raro" data-price="14.90">
+    <div class="badge limited">🎁 Limitado</div>
+    
+    <div class="product-image">
+        <div class="image-placeholder">💎</div>
+    </div>
+    
+    <h3>Item Raro</h3>
+    <p class="description">Item exclusivo e limitado</p>
+    
+    <div class="price-section">
+        <div class="price">R$ 14,90</div>
+        <div class="original-price">R$ 29,90</div>
+    </div>
+    
+    <div class="payment-info">em até 3x sem juros</div>
+    
+    <button class="buy-btn" onclick="comprar(this)">Adicionar ao Carrinho</button>
+    
+    <div class="info">⚠️ Estoque limitado</div>
+</div>
+
+<!-- ITEM 4 - Arma Lendária -->
+<div class="card" data-name="arma lendaria" data-price="24.90">
+    <div class="badge">🏆 Lendário</div>
+    
+    <div class="product-image">
+        <div class="image-placeholder">⚔️</div>
+    </div>
+    
+    <h3>Arma Lendária</h3>
+    <p class="description">Poder e estilo incomparáveis</p>
+    
+    <div class="price-section">
+        <div class="price">R$ 24,90</div>
+        <div class="original-price">R$ 49,90</div>
+    </div>
+    
+    <div class="payment-info">em até 3x sem juros</div>
+    
+    <button class="buy-btn" onclick="comprar(this)">Adicionar ao Carrinho</button>
+    
+    <div class="info">💪 Dano aumentado</div>
+</div>
+
+<!-- ITEM 5 - Skin Exclusiva -->
+<div class="card" data-name="skin exclusiva" data-price="19.90">
+    <div class="badge new">✨ Épica</div>
+    
+    <div class="product-image">
+        <div class="image-placeholder">🎨</div>
+    </div>
+    
+    <h3>Skin Exclusiva</h3>
+    <p class="description">Customização única para seu personagem</p>
+    
+    <div class="price-section">
+        <div class="price">R$ 19,90</div>
+        <div class="original-price">R$ 39,90</div>
+    </div>
+    
+    <div class="payment-info">em até 2x sem juros</div>
+    
+    <button class="buy-btn" onclick="comprar(this)">Adicionar ao Carrinho</button>
+    
+    <div class="info">🎨 Design exclusivo</div>
+</div>
+
+<!-- ITEM 6 - Pacote Premium -->
+<div class="card" data-name="pacote premium" data-price="49.90">
+    <div class="badge limited">💎 Gold</div>
+    
+    <div class="product-image">
+        <div class="image-placeholder">📦</div>
+    </div>
+    
+    <h3>Pacote Premium</h3>
+    <p class="description">Todos os itens + desconto especial</p>
+    
+    <div class="price-section">
+        <div class="price">R$ 49,90</div>
+        <div class="original-price">R$ 99,90</div>
+    </div>
+    
+    <div class="payment-info">em até 6x sem juros</div>
+    
+    <button class="buy-btn" onclick="comprar(this)">Adicionar ao Carrinho</button>
+    
+    <div class="info">⭐ Mais vendido</div>
+</div>
+
+</main>
+
+<!-- Modal do Carrinho -->
+<div id="cartModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>🛒 Seu Carrinho</h2>
+            <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+            <div id="cartItems"></div>
+            <div class="cart-total">
+                <strong>Total: R$ <span id="cartTotal">0.00</span></strong>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="checkout-btn" onclick="finalizarCompra()">Finalizar Compra</button>
+        </div>
+    </div>
+</div>
+
+<!-- Toast de notificação -->
+<div id="toast" class="toast"></div>
 
 <script src="script.js"></script>
 
