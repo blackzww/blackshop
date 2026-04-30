@@ -34,17 +34,6 @@ nome: "SET DIO BRANDO + BRINDE",
     imagem: "https://cdn.centralcart.io/stores/7510/packages/599572ff-4be8-44bc-9541-68a3c1e99921.png"
 },
 
-nome: "",
-    categoria: "kits",
-    preco: 0,
-    precoOriginal: 11.90,
-    desc: "",
-    tipo: "new",
-    info: "",
-    imagem: ""
-},
-
-
 
 /* ========= ITENS ========= */
 {
