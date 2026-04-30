@@ -1,17 +1,20 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     margin: 0;
-    font-family: 'Segoe UI', 'Arial', sans-serif;
-    background: #000000;
-    color: white;
+    font-family: 'Segoe UI', 'Poppins', 'Arial', sans-serif;
+    background: radial-gradient(ellipse at center, #0a0a0a 0%, #000000 100%);
+    color: #fff;
     position: relative;
     overflow-x: hidden;
+    min-height: 100vh;
 }
 
-/* Efeito de estrelas animadas */
+/* Efeito de partículas de fogo/lava */
 body::before {
     content: '';
     position: fixed;
@@ -19,245 +22,434 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(2px 2px at 20px 30px, #fff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 60px 150px, #fff, rgba(0,0,0,0)),
-                radial-gradient(3px 3px at 90px 280px, #fff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 130px 50px, #fff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 180px 320px, #fff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 250px 100px, #fff, rgba(0,0,0,0)),
-                radial-gradient(3px 3px at 300px 400px, #fff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 350px 200px, #fff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 450px 60px, #fff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 550px 350px, #fff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 650px 120px, #fff, rgba(0,0,0,0)),
-                radial-gradient(3px 3px at 750px 280px, #fff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 850px 180px, #fff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 950px 420px, #fff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 1050px 80px, #fff, rgba(0,0,0,0)),
-                radial-gradient(3px 3px at 1150px 300px, #fff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 1250px 450px, #fff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 1350px 150px, #fff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 1450px 380px, #fff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 1550px 70px, #fff, rgba(0,0,0,0)),
-                radial-gradient(3px 3px at 1650px 250px, #fff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 1750px 410px, #fff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 1850px 130px, #fff, rgba(0,0,0,0));
+    background-image: 
+        radial-gradient(2px 3px at 10% 20%, #ff6600, transparent),
+        radial-gradient(3px 2px at 25% 45%, #ff3300, transparent),
+        radial-gradient(1px 2px at 40% 15%, #ff9900, transparent),
+        radial-gradient(4px 3px at 55% 70%, #ff4400, transparent),
+        radial-gradient(2px 1px at 70% 35%, #ffcc00, transparent),
+        radial-gradient(3px 4px at 85% 60%, #ff5500, transparent),
+        radial-gradient(2px 2px at 95% 25%, #ff8800, transparent),
+        radial-gradient(1px 3px at 15% 85%, #ff2200, transparent),
+        radial-gradient(4px 2px at 35% 55%, #ffaa00, transparent),
+        radial-gradient(2px 3px at 50% 90%, #ff6600, transparent),
+        radial-gradient(3px 1px at 65% 15%, #ff4400, transparent),
+        radial-gradient(2px 4px at 80% 80%, #ffcc00, transparent),
+        radial-gradient(1px 2px at 90% 45%, #ff3300, transparent);
     background-repeat: no-repeat;
-    background-size: 200px 200px;
-    opacity: 0;
-    animation: starTwinkle 3s ease-in-out infinite;
+    background-size: 300px 300px;
+    opacity: 0.6;
+    animation: floatParticles 8s ease-in-out infinite;
     pointer-events: none;
     z-index: 0;
 }
 
-/* Segunda camada de estrelas para profundidade */
+/* Ondas de fogo */
 body::after {
     content: '';
     position: fixed;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(1px 1px at 40px 80px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 120px 250px, rgba(255,255,255,0.6), rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 200px 450px, rgba(255,255,255,0.7), rgba(0,0,0,0)),
-                radial-gradient(3px 3px at 380px 30px, rgba(255,255,255,0.5), rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 500px 300px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 680px 200px, rgba(255,255,255,0.6), rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 820px 500px, rgba(255,255,255,0.7), rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 980px 350px, rgba(255,255,255,0.5), rgba(0,0,0,0)),
-                radial-gradient(3px 3px at 1100px 100px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 1280px 290px, rgba(255,255,255,0.6), rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 1420px 180px, rgba(255,255,255,0.7), rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 1580px 460px, rgba(255,255,255,0.5), rgba(0,0,0,0)),
-                radial-gradient(3px 3px at 1680px 320px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 1820px 90px, rgba(255,255,255,0.6), rgba(0,0,0,0));
-    background-repeat: no-repeat;
-    background-size: 200px 200px;
-    opacity: 0;
-    animation: starTwinkle 4s ease-in-out infinite reverse;
+    background: linear-gradient(transparent 70%, rgba(255, 68, 0, 0.1) 100%);
     pointer-events: none;
     z-index: 0;
 }
 
-@keyframes starTwinkle {
+/* Efeito de brilho pulsante no fundo */
+@keyframes floatParticles {
     0%, 100% {
-        opacity: 0.3;
+        transform: translateY(0px) translateX(0px);
+        opacity: 0.4;
+    }
+    25% {
+        transform: translateY(-30px) translateX(10px);
+        opacity: 0.7;
     }
     50% {
-        opacity: 1;
+        transform: translateY(20px) translateX(-15px);
+        opacity: 0.5;
+    }
+    75% {
+        transform: translateY(-10px) translateX(20px);
+        opacity: 0.6;
     }
 }
 
-/* HEADER */
+/* Header com efeito de neon laranja */
 header {
     padding: 20px;
     text-align: center;
-    backdrop-filter: blur(10px);
-    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(15px);
+    background: rgba(0,0,0,0.8);
     position: relative;
     z-index: 1;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 2px solid #ff6600;
+    box-shadow: 0 0 30px rgba(255, 102, 0, 0.3);
+    animation: headerGlow 3s ease-in-out infinite;
+}
+
+@keyframes headerGlow {
+    0%, 100% {
+        border-bottom-color: #ff6600;
+        box-shadow: 0 0 20px rgba(255, 102, 0, 0.3);
+    }
+    50% {
+        border-bottom-color: #ff3300;
+        box-shadow: 0 0 40px rgba(255, 51, 0, 0.6);
+    }
 }
 
 header h1 {
     margin: 0;
-    font-size: 28px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+    font-size: 32px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff 0%, #ffcc00 50%, #ff6600 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: titleShine 2s linear infinite;
+    letter-spacing: 2px;
 }
 
-/* SEARCH */
+@keyframes titleShine {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+/* Barra de busca com efeito de fogo */
+.search-area {
+    position: relative;
+}
+
 #search {
-    margin-top: 12px;
-    padding: 12px 20px;
+    margin-top: 15px;
+    padding: 14px 25px;
     width: 90%;
-    max-width: 450px;
-    border-radius: 25px;
-    border: none;
+    max-width: 500px;
+    border-radius: 50px;
+    border: 2px solid #ff6600;
     outline: none;
-    background: rgba(255,255,255,0.1);
-    color: white;
-    font-size: 14px;
-    transition: 0.3s;
-    backdrop-filter: blur(5px);
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    font-size: 15px;
+    transition: all 0.3s;
 }
 
 #search:focus {
-    background: rgba(255,255,255,0.15);
-    box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    border-color: #ff3300;
+    box-shadow: 0 0 25px rgba(255, 102, 0, 0.5), inset 0 0 10px rgba(255, 102, 0, 0.2);
+    transform: scale(1.02);
 }
 
-#search::placeholder {
-    color: rgba(255,255,255,0.6);
-}
-
-/* GRID */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-    gap: 25px;
-    padding: 30px;
-    position: relative;
-    z-index: 1;
-}
-
-/* CARD */
-.card {
-    background: rgba(0,0,0,0.8);
-    border-radius: 15px;
-    padding: 20px;
-    backdrop-filter: blur(10px);
-    transition: 0.3s;
-    border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    cursor: pointer;
-}
-
-.card:hover {
-    transform: translateY(-5px) scale(1.03);
-    border-color: rgba(255,255,255,0.3);
-    box-shadow: 0 8px 25px rgba(255,255,255,0.1);
-}
-
-/* BUTTON */
-button {
-    background: linear-gradient(45deg, #ffffff, #cccccc);
-    border: none;
-    padding: 12px;
-    color: #000000;
-    width: 100%;
-    border-radius: 25px;
-    cursor: pointer;
-    margin-top: 12px;
-    transition: 0.3s;
-    font-weight: bold;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255,255,255,0.2);
-    background: linear-gradient(45deg, #eeeeee, #ffffff);
-}
-
-/* Estilos das categorias */
+/* Categorias - efeito de chama */
 .categories {
     position: relative;
     z-index: 1;
-    background: rgba(0,0,0,0.5);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    padding: 15px 0;
-}
-
-.categories-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    padding: 0 20px;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(12px);
+    padding: 20px 0;
+    margin: 0 0 20px 0;
+    border-top: 1px solid rgba(255, 102, 0, 0.3);
+    border-bottom: 1px solid rgba(255, 102, 0, 0.3);
 }
 
 .category-btn {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 12px 24px;
-    color: white;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    width: auto;
-    margin: 0;
+    background: linear-gradient(135deg, rgba(255, 102, 0, 0.2), rgba(255, 51, 0, 0.1));
+    border: 1px solid rgba(255, 102, 0, 0.5);
+    position: relative;
+    overflow: hidden;
 }
 
-.category-btn:hover {
-    background: rgba(255,255,255,0.15);
-    transform: translateY(-2px);
+.category-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 102, 0, 0.5), transparent);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.category-btn:hover::before {
+    width: 300px;
+    height: 300px;
 }
 
 .category-btn.active {
-    background: linear-gradient(45deg, #ffffff, #cccccc);
-    color: #000000;
-    border-color: transparent;
+    background: linear-gradient(135deg, #ff6600, #ff3300);
+    color: white;
+    border-color: #ffcc00;
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.8);
+    animation: btnPulse 1s ease-in-out infinite;
 }
 
-.category-icon {
-    font-size: 18px;
+@keyframes btnPulse {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(255, 102, 0, 0.6);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(255, 102, 0, 1);
+    }
 }
 
-/* INFO */
-.info {
-    font-size: 12px;
-    opacity: 0.7;
-    margin-top: 8px;
-    color: #cccccc;
+/* Cards com efeito 3D e chamas */
+.card {
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.95), rgba(10, 10, 10, 0.95));
+    border-radius: 20px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 102, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    position: relative;
+    overflow: hidden;
 }
 
-/* Scrollbar personalizada */
-::-webkit-scrollbar {
+/* Efeito de fogo nos cards */
+.card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 68, 0, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+
+.card:hover::before {
+    opacity: 1;
+    animation: fireRotate 3s linear infinite;
+}
+
+@keyframes fireRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: #ff6600;
+    box-shadow: 0 15px 35px rgba(255, 68, 0, 0.4);
+}
+
+/* Badges com efeito de fogo */
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(135deg, #ff6600, #ff3300);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    animation: badgeGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes badgeGlow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(255, 102, 0, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(255, 102, 0, 0.8);
+    }
+}
+
+/* Preços com efeito de destaque */
+.price {
+    font-size: 28px;
+    font-weight: 800;
+    color: #ff6600;
+    text-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
+    animation: pricePulse 2s ease-in-out infinite;
+}
+
+@keyframes pricePulse {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 102, 0, 0.8);
+    }
+}
+
+/* Botão de compra com efeito explosivo */
+.buy-btn {
+    background: linear-gradient(45deg, #ff6600, #ff3300);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    transition: all 0.3s;
+}
+
+.buy-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8), transparent);
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
+}
+
+.buy-btn:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+.buy-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 68, 0, 0.8);
+    background: linear-gradient(45deg, #ff7700, #ff4400);
+}
+
+/* Adicionar imagem placeholder animada */
+.image-placeholder {
+    font-size: 64px;
+    text-align: center;
+    filter: drop-shadow(0 0 15px rgba(255, 102, 0, 0.5));
+    animation: iconFloat 2s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Modal com tema de fogo */
+.modal-content {
+    background: linear-gradient(135deg, #1a0a00, #0a0500);
+    border: 2px solid #ff6600;
+    box-shadow: 0 0 50px rgba(255, 68, 0, 0.3);
+    animation: modalEntry 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes modalEntry {
+    from {
+        transform: scale(0) rotate(-10deg);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+/* Toast com efeito de fogo */
+.toast {
+    background: linear-gradient(135deg, #ff6600, #ff3300);
+    color: white;
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 15px 30px;
+    animation: toastFire 0.5s ease-out;
+}
+
+@keyframes toastFire {
+    from {
+        transform: translateX(-50%) translateY(100px) scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(-50%) translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Estrelas cadentes douradas */
+.star {
+    position: fixed;
+    width: 2px;
+    height: 2px;
+    background: #ffcc00;
+    top: -10px;
+    animation: shootingStar linear infinite;
+    pointer-events: none;
+    z-index: 100;
+}
+
+@keyframes shootingStar {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) translateX(100vw) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Efeito de partículas ao clicar */
+.click-particle {
+    position: fixed;
     width: 10px;
+    height: 10px;
+    background: #ff6600;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: particleExplode 0.8s ease-out forwards;
+    z-index: 9999;
 }
 
+@keyframes particleExplode {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+/* Scrollbar temática */
 ::-webkit-scrollbar-track {
-    background: #000000;
+    background: #1a0a00;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #333333;
+    background: linear-gradient(135deg, #ff6600, #ff3300);
     border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #555555;
+    background: linear-gradient(135deg, #ff7700, #ff4400);
+}
+
+/* Adicionar brilho nos textos */
+h3 {
+    background: linear-gradient(135deg, #fff, #ffcc00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 20px;
+}
+
+/* Efeito de loading nos botões quando clicados */
+.buy-btn:active {
+    transform: scale(0.95);
+    transition: transform 0.05s;
 }
