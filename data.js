@@ -28,9 +28,7 @@ nome: "SET DIO BRANDO + BRINDE",
     categoria: "kits",
     preco: 0,
     precoOriginal: 11.90,
-    desc: "[🟡] DIO BRANDO/THE WORLD SET
-[Necessário Ter o Título Time Tyrant e Bloodline Primordial]
-- 2x Vampire Omen / 6x World Core / 12x Time Remnant / 20x power fragment / 80x Dominion Brand",
+    desc: "[🟡] DIO BRANDO/THE WORLD SET\n[Necessário Ter o Título Time Tyrant e Bloodline Primordial]\n- 2x Vampire Omen / 6x World Core / 12x Time Remnant / 20x Power Fragment / 80x Dominion Brand",
     tipo: "new",
     info: "🚀 Turbine o seu poder",
     imagem: "https://cdn.centralcart.io/stores/7510/packages/599572ff-4be8-44bc-9541-68a3c1e99921.png"
