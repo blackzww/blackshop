@@ -184,6 +184,58 @@ button:hover {
     background: linear-gradient(45deg, #eeeeee, #ffffff);
 }
 
+/* Estilos das categorias */
+.categories {
+    position: relative;
+    z-index: 1;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 15px 0;
+}
+
+.categories-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.category-btn {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 12px 24px;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    width: auto;
+    margin: 0;
+}
+
+.category-btn:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-2px);
+}
+
+.category-btn.active {
+    background: linear-gradient(45deg, #ffffff, #cccccc);
+    color: #000000;
+    border-color: transparent;
+}
+
+.category-icon {
+    font-size: 18px;
+}
+
 /* INFO */
 .info {
     font-size: 12px;
