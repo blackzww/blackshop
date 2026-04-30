@@ -1,51 +1,76 @@
-body {
-    font-family: Arial, sans-serif;
-    background: #0f0f0f;
-    color: white;
-    margin: 0;
+* {
+    box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0f0f0f, #1a0033);
+    color: white;
+}
+
+/* HEADER */
 header {
     padding: 20px;
     text-align: center;
-    background: #1a1a1a;
-    font-size: 24px;
-    font-weight: bold;
+    backdrop-filter: blur(10px);
 }
 
+header h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+/* SEARCH */
+#search {
+    margin-top: 10px;
+    padding: 10px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+/* GRID */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 20px;
     padding: 20px;
 }
 
+/* CARD */
 .card {
-    background: #1c1c1c;
+    background: rgba(255,255,255,0.05);
+    border-radius: 15px;
     padding: 15px;
-    border-radius: 10px;
-    transition: 0.2s;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px) scale(1.03);
 }
 
+/* BUTTON */
 button {
-    background: #6a00ff;
+    background: linear-gradient(45deg, #6a00ff, #9d00ff);
     border: none;
     padding: 10px;
     color: white;
     width: 100%;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
+    margin-top: 10px;
     transition: 0.2s;
 }
 
 button:hover {
-    background: #7d1aff;
+    opacity: 0.8;
 }
 
+/* INFO */
 .info {
     font-size: 12px;
     opacity: 0.6;
