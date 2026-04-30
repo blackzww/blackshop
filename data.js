@@ -7,11 +7,12 @@ const produtos = [
     preco: 0,
     precoOriginal: 9.90,
     desc: "[🟡] GILGAMESH SET + BABYLON KEY\n[Necessário Ter o Título Golden King/Rei Dourado e Raça Servant Para Craftar a Babylon Key]\n- 3 Phantasm Core / 8 Golden Essence / 6 Ancient Shard / 12 Throne Remnant / 100 Broken Sword",
-    badge: "🔥 Mais Adiquirido",
+    badge: "🔥 Mais Adquirido",
     tipo: "",
     info: "⭐ 100% OFF + brinde exclusivo",
     imagem: "https://cdn.centralcart.io/stores/7510/packages/0cb5e97e-87b1-4a6f-9aa7-d8f9f6f957d4.png"
 },
+
 {
     nome: "SET GAROU/COSMIC BEING",
     categoria: "kits",
@@ -24,16 +25,17 @@ const produtos = [
     imagem: "https://cdn.centralcart.io/stores/7510/packages/ce6ef8c1-5a12-44b8-815b-ebc8fd733d45.png"
 },
 
-nome: "SET DIO BRANDO + BRINDE",
+{
+    nome: "SET DIO BRANDO + BRINDE",
     categoria: "kits",
     preco: 0,
     precoOriginal: 11.90,
     desc: "[🟡] DIO BRANDO/THE WORLD SET\n[Necessário Ter o Título Time Tyrant e Bloodline Primordial]\n- 2x Vampire Omen / 6x World Core / 12x Time Remnant / 20x Power Fragment / 80x Dominion Brand",
+    badge: "⚡ Exclusivo",
     tipo: "new",
     info: "🚀 Turbine o seu poder",
     imagem: "https://cdn.centralcart.io/stores/7510/packages/599572ff-4be8-44bc-9541-68a3c1e99921.png"
 },
-
 
 /* ========= ITENS ========= */
 {
