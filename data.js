@@ -6,9 +6,7 @@ const produtos = [
     categoria: "kits",
     preco: 0,
     precoOriginal: 19.90,
-    desc: "[🟡] GILGAMESH SET + BABYLON KEY
-[Necessário Ter o Título Golden King/Rei Dourado e Raça Servant Para Craftar a Babylon Key]
-- 3 Phantasm Core / 8 Golden Essence / 6 Ancient Shard / 12 Throne Remnant / 100 Broken Sword",
+    desc: "[🟡] GILGAMESH SET + BABYLON KEY\n[Necessário Ter o Título Golden King/Rei Dourado e Raça Servant Para Craftar a Babylon Key]\n- 3 Phantasm Core / 8 Golden Essence / 6 Ancient Shard / 12 Throne Remnant / 100 Broken Sword"",
     badge: "🔥 Mais Adiquirido",
     tipo: "",
     info: "⭐ 100% OFF + brinde exclusivo",
