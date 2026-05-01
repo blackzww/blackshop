@@ -50,6 +50,31 @@ const produtos = [
 },
 
 
+{
+    nome: "KOKUSHIBO/MOON SLAYER SET + MASTERY",
+    categoria: "kits",
+    preco: 0,
+    precoOriginal: 9.90,
+    desc: "[🌙] KOKUSHIBO/MOON SLAYER SET + MASTERY\n[Necessário Ter o Título Six Eyed Demon e o Clã Upper Para a Skill F]\n- 3x Moon Crest / 14x Crescent Shard / 9x Lunar Essence / 16x Demon Remnant / 110x Upper Seal",
+    tipo: "new",
+    info: "🌙 Liberte a lua",
+    imagem: "https://cdn.centralcart.io/stores/7510/packages/b8bf96f8-12db-44f6-9810-6836d6102c74.png"
+},
+
+
+{
+    nome: "MADARA SET + MASTERY",
+    categoria: "kits",
+    preco: 0,
+    precoOriginal: 9.90,
+    desc: "[🔴] MADARA SET + MASTERY\n[Necessário Ter o Título Battlefield Warlord e a Raça Warlord Para a Skill F]\n- 3x Path Fragment / 8x Eternal Core / 18x Battle Sigil / 15x Power Remnant",
+    tipo: "new",
+    info: "",
+    imagem: "https://cdn.centralcart.io/stores/7510/packages/596a1c58-9328-475c-a643-70e4fa12f202.png"
+},
+
+
+
 /* ========= ITENS ========= */
 {
     nome: "Arma Lendária",
