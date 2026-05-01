@@ -37,6 +37,19 @@ const produtos = [
     imagem: "https://cdn.centralcart.io/stores/7510/packages/599572ff-4be8-44bc-9541-68a3c1e99921.png"
 },
 
+
+{
+    nome: "ESDEATH/ICE QUEEN SET + MASTERY",
+    categoria: "kits",
+    preco: 0,
+    precoOriginal: 13.90,
+    desc: "[❄️] ESDEATH/ICE QUEEN SET + MASTERY\n[Necessário Ter o Título Frost Empress e o Clã FrostBane Para Skill F]\n- 3x Ice Core / 14x Frozen Brand / 9x Glacier Remnant / 17x Battle Shard / 125x Frost Relic\n\n[❄️] MASTERY ESDEATH/ICE QUEEN\n[Necessário Ter o Clã FrostBane]\n- 2x Ice Core / 10x Frozen Brand / 85x Frost Relic",
+    tipo: "new",
+    info: "❄️ Espalhe a magia do gelo",
+    imagem: "https://cdn.centralcart.io/stores/7510/packages/39e83b66-efe1-4a3a-96a0-54987325e4bf.png"
+},
+
+
 /* ========= ITENS ========= */
 {
     nome: "Arma Lendária",
