@@ -1,84 +1,81 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BLACK SHOP | A MELHOR LOJA DE ITENS GRÁTIS</title>
-
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLACK SHOP | A MELHOR LOJA DE ITENS GRÁTIS</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- HEADER -->
-<header class="top">
-    <div class="header-container">
+    <header class="top">
+        <div class="header-container">
+            <div class="logo">
+                <h1>BLACK SHOP</h1>
+                <span class="tagline">KITS | ITENS | SERVIÇOS | 100% GRÁTIS</span>
+            </div>
 
-        <div class="logo">
-            <h1>BLACK SHOP</h1>
-            <span class="tagline">KITS | ITENS | SERVIÇOS | 100% GRÁTIS</span>
-        </div>
-
-        <!-- 🔍 BUSCA (ESSENCIAL PRA NÃO DAR ERRO) -->
-        <div class="search-area">
-            <input type="text" id="search" placeholder="Buscar produtos...">
-        </div>
-
-    </div>
-</header>
-
-<!-- MAIN -->
-<main>
-
-<section class="section">
-    <h2 class="section-title"> KITS</h2>
-    <div class="grid" id="kitsGrid"></div>
-</section>
-
-<section class="section">
-    <h2 class="section-title"> ITENS</h2>
-    <div class="grid" id="itensGrid"></div>
-</section>
-
-<section class="section">
-    <h2 class="section-title"> SERVIÇOS</h2>
-    <div class="grid" id="servicosGrid"></div>
-</section>
-
-</main>
-
-<!-- MODAL DO CARRINHO -->
-<div id="cartModal" class="modal">
-    <div class="modal-content">
-
-        <div class="modal-header">
-            <h2>🛒 SEU CARRINHO</h2>
-            <span class="close">&times;</span>
-        </div>
-
-        <div class="modal-body">
-            <div id="cartItems"></div>
-
-            <div class="cart-total">
-                <strong>Total: R$ <span id="cartTotal">0.00</span></strong>
+            <div class="search-area">
+                <input type="text" id="search" placeholder="🔍 Buscar produtos...">
             </div>
         </div>
+    </header>
 
-        <div class="modal-footer">
-            <button class="checkout-btn" onclick="finalizarCompra()">
-                Finalizar Compra
-            </button>
+    <nav class="categories">
+        <div class="categories-container">
+            <button class="category-btn active" data-category="all">Tudo</button>
+            <button class="category-btn" data-category="kits">Kits</button>
+            <button class="category-btn" data-category="itens">Itens</button>
+            <button class="category-btn" data-category="servicos">Serviços</button>
         </div>
+    </nav>
 
+    <main>
+        <section class="section" id="section-kits">
+            <h2 class="section-title"> KITS EXCLUSIVOS</h2>
+            <div class="grid" id="kitsGrid"></div>
+        </section>
+
+        <section class="section" id="section-itens">
+            <h2 class="section-title"> ITENS RAROS</h2>
+            <div class="grid" id="itensGrid"></div>
+        </section>
+
+        <section class="section" id="section-servicos">
+            <h2 class="section-title"> SERVIÇOS PRO</h2>
+            <div class="grid" id="servicosGrid"></div>
+        </section>
+    </main>
+
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🛒 SEU CARRINHO</h2>
+                <span class="close" onclick="fecharCarrinho()">&times;</span>
+            </div>
+
+            <div class="modal-body">
+                <div id="cartItems">
+                    <p style="color:#666; text-align:center;">Seu carrinho está vazio.</p>
+                </div>
+
+                <div class="cart-total">
+                    <strong>Total: <span id="cartTotal">R$ 0.00</span></strong>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="checkout-btn" onclick="finalizarCompra()">
+                    Finalizar Compra via WhatsApp
+                </button>
+            </div>
+        </div>
     </div>
-</div>
 
-<!-- TOAST -->
-<div id="toast" class="toast"></div>
+    <div id="toast" class="toast">Produto adicionado! ✅</div>
 
-<!-- SCRIPTS -->
-<script src="data.js"></script>
-<script src="script.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
