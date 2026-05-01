@@ -21,7 +21,6 @@ const produtos = [
     desc: "[🪐] Garou/Cosmic Being Set\n[Necessário Ter o Título Cosmic Being]\n- 2x Monster Pulse / 5x Galaxy Shard / 8x Star Mark / 12x Cosmic Essence",
     badge: "🆕 Novo",
     tipo: "new",
-    info: "⏰ Acelere seu progresso",
     imagem: "https://cdn.centralcart.io/stores/7510/packages/ce6ef8c1-5a12-44b8-815b-ebc8fd733d45.png"
 },
 
@@ -33,7 +32,6 @@ const produtos = [
     desc: "[🟡] DIO BRANDO/THE WORLD SET\n[Necessário Ter o Título Time Tyrant e Bloodline Primordial]\n- 2x Vampire Omen / 6x World Core / 12x Time Remnant / 20x Power Fragment / 80x Dominion Brand",
     badge: "⚡ Exclusivo",
     tipo: "new",
-    info: "🚀 Turbine o seu poder",
     imagem: "https://cdn.centralcart.io/stores/7510/packages/599572ff-4be8-44bc-9541-68a3c1e99921.png"
 },
 
@@ -45,7 +43,6 @@ const produtos = [
     precoOriginal: 13.90,
     desc: "[❄️] ESDEATH/ICE QUEEN SET + MASTERY\n[Necessário Ter o Título Frost Empress e o Clã FrostBane Para Skill F]\n- 3x Ice Core / 14x Frozen Brand / 9x Glacier Remnant / 17x Battle Shard / 125x Frost Relic\n\n[❄️] MASTERY ESDEATH/ICE QUEEN\n[Necessário Ter o Clã FrostBane]\n- 2x Ice Core / 10x Frozen Brand / 85x Frost Relic",
     tipo: "new",
-    info: "❄️ Espalhe a magia do gelo",
     imagem: "https://cdn.centralcart.io/stores/7510/packages/39e83b66-efe1-4a3a-96a0-54987325e4bf.png"
 },
 
@@ -57,7 +54,6 @@ const produtos = [
     precoOriginal: 9.90,
     desc: "[🌙] KOKUSHIBO/MOON SLAYER SET + MASTERY\n[Necessário Ter o Título Six Eyed Demon e o Clã Upper Para a Skill F]\n- 3x Moon Crest / 14x Crescent Shard / 9x Lunar Essence / 16x Demon Remnant / 110x Upper Seal",
     tipo: "new",
-    info: "🌙 Liberte a lua",
     imagem: "https://cdn.centralcart.io/stores/7510/packages/b8bf96f8-12db-44f6-9810-6836d6102c74.png"
 },
 
@@ -69,7 +65,6 @@ const produtos = [
     precoOriginal: 9.90,
     desc: "[🔴] MADARA SET + MASTERY\n[Necessário Ter o Título Battlefield Warlord e a Raça Warlord Para a Skill F]\n- 3x Path Fragment / 8x Eternal Core / 18x Battle Sigil / 15x Power Remnant",
     tipo: "new",
-    info: "",
     imagem: "https://cdn.centralcart.io/stores/7510/packages/596a1c58-9328-475c-a643-70e4fa12f202.png"
 },
 
